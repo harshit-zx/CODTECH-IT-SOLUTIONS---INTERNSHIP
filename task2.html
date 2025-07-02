@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Real-Time Chat UI</title>
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background: #d2fbb7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.chat-container {
+  background: #fff;
+  width: 100%;
+  padding: 20px;
+  max-width: 600px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+header {
+  background-color: #1e88e5;
+  padding: 15px;
+  color: white;
+  text-align: center;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #fafafa;
+}
+
+.message {
+  margin: 10px 0;
+  max-width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  position: relative;
+  clear: both;
+}
+
+.sent {
+  background-color: #c8e6c9;
+  align-self: flex-end;
+  float: right;
+}
+
+.received {
+  background-color: #eeeeee;
+  align-self: flex-start;
+  float: left;
+}
+
+.timestamp {
+  font-size: 0.8em;
+  color: gray;
+  margin-top: 5px;
+  text-align: right;
+}
+
+.input-container {
+  display: flex;
+  padding: 10px;
+  background: #eee;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <header>
+    <div class="header-container">
+      <h1>💬 CodTech Chat UI</h1>
+      <p>Built by Harshit Maurya - Real-Time Chat bot</p>
+    </div>
+  </header>
+
+  <div class="chat-container">
+    <div id="chat-box" class="chat-box"></div>
+
+    <div class="input-container">
+      <input type="text" id="message-input" placeholder="Type a message..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  
+
+  <script >
+    function sendMessage() {
+  const input = document.getElementById("message-input");
+  const chatBox = document.getElementById("chat-box");
+
+  if (input.value.trim() === "") return;
+
+  // Add sent message
+  const sentMsg = createMessage(input.value, "sent");
+  chatBox.appendChild(sentMsg);
+
+  // Simulate received reply
+  setTimeout(() => {
+    const replyMsg = createMessage("Got it! 👍", "received");
+    chatBox.appendChild(replyMsg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }, 1000);
+
+  input.value = "";
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function createMessage(text, type) {
+  const messageDiv = document.createElement("div");
+  messageDiv.classList.add("message", type);
+  messageDiv.innerHTML = `
+    ${text}
+    <div class="timestamp">${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
+  `;
+  return messageDiv;
+}
+    // Auto-scroll to bottom    
+    document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
+    // Handle Enter key for sending messages
+    document.getElementById("message-input").addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+    // Initial auto-scroll
+    document.getElementById("chat-box").scrollTop = document.getElementById("chat-box").scrollHeight;
+    
+  </script>
+  
+  <div class="footer-container">
+      <h3>About Developer</h3>
+      <p><strong>Harshit Maurya</strong> — B.Tech Student & Full-Stack Developer</p>
+      <p>Email: harshit9005944963@gmail.com</p>
+      <p>Phone: +91 6387276254</p>
+      <p>&copy; 2025 CodTech • All rights reserved.</p>
+    </div>
+</body>
+</html>
