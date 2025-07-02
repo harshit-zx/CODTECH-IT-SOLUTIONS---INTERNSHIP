@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harshit | Developer Portfolio</title>
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 20px 0;
+}
+
+header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #00e676;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 50px 0;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #00796b;
+}
+
+.project-card {
+  background: #f1f1f1;
+  margin: 20px 0;
+  padding: 20px;
+  border-left: 5px solid #00bcd4;
+  border-radius: 8px;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 50px;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+
+  .project-card {
+    font-size: 14px;
+  }
+}
+    header h1 {
+        font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Harshit Maurya</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        I'm Harshit Maurya, a passionate B.Tech student and full-stack web developer.
+        I enjoy building practical, real-world projects using HTML, CSS, JavaScript, and modern frameworks.
+        I love to learn, code, and innovate.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+
+      <div class="project-card">
+        <h3>📝 Quiz Application</h3>
+        <p>A dynamic quiz app built with HTML, CSS, and JavaScript that gives instant feedback and score tracking.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>💬 Real-Time Chat App</h3>
+        <p>A real-time messaging app built using React and WebSocket with instant communication and chat history.</p>
+      </div>
+
+      <div class="project-card">
+        <h3>📚 Hotel Booking System</h3>
+        <p>A backend-integrated hotel room booking web application with SDLC and modular structure.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Email: harshit9005944963@gmail.com</p>
+      <p>Phone: +91 6387276254</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Harshit Maurya. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
